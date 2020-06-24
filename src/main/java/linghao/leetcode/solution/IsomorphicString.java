@@ -1,5 +1,7 @@
 package linghao.leetcode.solution;
 
+import java.util.HashMap;
+
 /**
  * @author linghao,
  * @date 2020/6/9,
@@ -32,7 +34,27 @@ package linghao.leetcode.solution;
  */
 public class IsomorphicString {
     public boolean isIsomorphic(String x, String y) {
+        if(x.length()!=y.length()){
+            return false;
+        }
+        HashMap<Character,Character> map=new HashMap<>();
+        char[] a = x.toCharArray();
+        char[] b = y.toCharArray();
+        for(int i=0;i<a.length;i++){
+            if(map.get(a[i])==null){//a没有建立映射
+                if(map.containsValue(b[i])){//b建立映射
+                    return false;
+                }
+                map.put(a[i],b[i]);
+            }else if(map.get(a[i])!=b[i]){
+                return false;
+            }
+        }
+        return true;
+    }
 
-        return false;
+    public static void main(String[] args) {
+        IsomorphicString s = new IsomorphicString();
+        System.out.println(s.isIsomorphic("aqd","ert"));
     }
 }

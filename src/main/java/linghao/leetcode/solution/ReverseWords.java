@@ -44,4 +44,18 @@ public class ReverseWords {
         ReverseWords r = new ReverseWords();
         System.out.println(r.reverseWords("  the   sky is   blue   "));
     }
+
 }
+/** ==========================================================
+ *
+ * Collections revers()方法翻转
+ * String trim()方法去除首尾空格
+ *
+ *
+ *
+ *
+ *
+ *============================================================*/
+
+
+
